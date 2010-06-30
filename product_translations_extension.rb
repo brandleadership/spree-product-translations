@@ -3,7 +3,7 @@
 
 class ProductTranslationsExtension < Spree::Extension
   version "1.0"
-  description "Makes product details, properties, prototypes and taxonomies translatable using the Globalize 2 plugin"
+  description "Makes product details, properties, prototypes, option types, option values and taxonomies translatable using the Globalize 2 plugin"
   
   def activate
     # add content translations using Globalize 2's helpers
@@ -27,6 +27,13 @@ class ProductTranslationsExtension < Spree::Extension
     Taxon.class_eval do
       translates :name
     end
-
+    
+    OptionType.class_eval do
+      translates :presentation
+    end
+    
+    OptionValue.class_eval do
+      translates :presentation
+    end    
   end
 end

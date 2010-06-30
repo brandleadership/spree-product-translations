@@ -26,7 +26,6 @@ namespace :spree do
 
         puts "updating product names, description, meta_keywords and meta_description..."
         Product.all.each do |p| 
-          
           p.name = fetch_first_row("select products.name from products where products.id=#{p.id}")
           p.description = fetch_first_row("select products.description from products where products.id=#{p.id}")
           p.meta_keywords = fetch_first_row("select products.meta_keywords from products where products.id=#{p.id}")
@@ -60,6 +59,20 @@ namespace :spree do
         Prototype.all.each do |p|
       	  p.name = fetch_first_row("select prototypes.name from prototypes where prototypes.id=#{p.id}")
       	  p.save!
+        end
+        puts "done."
+        
+        puts "updating option_type presentation"
+        OptionType.all.each do |o|
+          o.presentation = fetch_first_row("select option_types.presentation from option_types where option_types.id=#{o.id}")
+          o.save!
+        end
+        puts "done."
+        
+        puts "updating option_value presentation"
+        OptionValue.all.each do |o|
+          o.presentation = fetch_first_row("select option_values.presentation from option_values where option_values.id=#{o.id}")
+          o.save!
         end
         puts "done."
       end  

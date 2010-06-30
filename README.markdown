@@ -1,10 +1,10 @@
 # Spree Product Translations #
 
-Makes product details, properties, prototypes and taxonomies translatable by bridging the Globalize 2 plugin.
+Makes product details, properties, prototypes, option types, option values and taxonomies translatable by bridging the Globalize 2 plugin.
 
 ## Installation and configuration: ##
 
-	script/extension install git://github.com/oliverbarnes/spree-product-translations.git
+	script/extension install git@github.com:screenconcept/spree-product-translations.git
 
 Install the "Globalize 2 plugin":http://github.com/joshmh/globalize2:
 
@@ -49,6 +49,12 @@ Taxonomy
   
 Taxon
 	name
+
+OptionType
+  presentation
+
+OptionValue
+  presentation
 
 ## TODO ##
 
