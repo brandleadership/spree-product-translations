@@ -31,8 +31,8 @@ namespace :spree do
           p.meta_keywords = fetch_first_row("select products.meta_keywords from products where products.id=#{p.id}")
           p.meta_description = fetch_first_row("select products.meta_description from products where products.id=#{p.id}")
           p.save!
-        end   
-        puts "done."       
+        end
+        puts "done."
 
         puts "updating taxonomy names..."
         Taxonomy.all.each do |t|
